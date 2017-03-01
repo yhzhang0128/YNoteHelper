@@ -1,0 +1,16 @@
+{
+  "manifest_version": 2,
+
+  "name": "YNote Class Helper",
+  "author": "Dolobyte",
+  "description": "This app helps teachers to learn students' subission status on Youdao Yun Xiezuo.",
+  "version": "1.0",
+
+  "browser_action": {
+   "default_icon": "func/icon.png",
+   "default_popup": "func/popup.html"
+  },
+  "permissions": [
+   "activeTab"
+   ]
+}
