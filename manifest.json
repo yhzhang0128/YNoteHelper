@@ -10,7 +10,16 @@
    "default_icon": "func/icon.png",
    "default_popup": "func/popup.html"
   },
+
+  "background": {
+    "scripts": ["func/js/background.js"]
+  },
+
   "permissions": [
-   "activeTab"
+   "storage",
+   "activeTab",
+   "webRequest",
+   "webRequestBlocking",
+   "*://note.youdao.com/*"
    ]
 }
