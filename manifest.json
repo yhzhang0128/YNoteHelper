@@ -1,13 +1,21 @@
 {
   "manifest_version": 2,
 
-  "name": "YNote Class Helper",
+  "name": "YNote Helper for JiaYi",
   "author": "Dolobyte",
-  "description": "This app helps teachers to learn students' subission status on Youdao Yun Xiezuo.",
+  "description": "This app helps JiaYi to learn students' subission status on Youdao Cloud.",
   "version": "1.0",
 
+  "icons": {
+    "48": "func/icon48.png",
+    "128": "func/icon128.png"
+  },
+
   "browser_action": {
-   "default_icon": "func/icon.png",
+   "default_icon": {
+     "48": "func/icon48.png",
+     "128": "func/icon128.png"
+   },
    "default_popup": "func/popup.html"
   },
 
