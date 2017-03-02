@@ -7,19 +7,31 @@
     <script src="js/jquery.min.js"></script>
     <style>
         body{
-            width: 400px;
+            width: 800px;
             height: 500px;
+        }
+        table{
+            width: 700px;
         }
     </style>
 
 </header>
 
 <body>
-    <p>导出所有学生上传列表</p>
+    <p>请确保有道云协作已经登录成功</p>
 
-    <div id="start">Click Me!</div>
-    <div id="result-url"></div>
+    <div id="start">
+      <button>Click Me!</button>
+    </div>
 
+    <table id="result" border="1">
+      <tr>
+        <th>Name</th>
+        <th>Creator</th>
+        <th>CTime</th>
+        <th>UTime</th>
+      </tr>
+    </table>
 
     <script src="js/execute.js"></script>
 

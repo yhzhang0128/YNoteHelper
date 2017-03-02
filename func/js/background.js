@@ -12,13 +12,13 @@ chrome.webRequest.onBeforeSendHeaders.addListener(
         
         // save URL
         if (!record){
-            message('Error: No value specified');
+            //message('Error: No value specified');
             return;
         }
 
         chrome.storage.sync.set({'URL': record}, function() {
             // Notify that we saved.
-            alert('Settings saved');
+            //message('Settings saved');
         });
     }
     return {requestHeaders: details.requestHeaders};
