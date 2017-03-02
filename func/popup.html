@@ -4,35 +4,67 @@
     <title>YNote Helper</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
+    <!-- Bootstrap Table -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-table.css">
     <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-table.js"></script>
+    <script src="js/bootstrap-table-zh-cn.js"></script>
+
+    <script src="js/clipboard.min.js"></script>
+
     <style>
         body{
             width: 800px;
             height: 500px;
+            font-family: "SF Pro SC","HanHei SC","SF Pro Text","Myriad Set Pro","SF Pro Icons","PingFang SC","Helvetica Neue","Helvetica","Arial",sans-serif;
         }
         table{
             width: 700px;
         }
+        h1{
+            font-size: 22px;
+            text-align: center;
+        }
+        p{
+            font-size: 16px;
+            width: 660px;
+            margin-left: 20px;
+        }
+        #after{
+            display: none;
+        }
     </style>
+
 
 </header>
 
 <body>
-    <p>请确保有道云协作已经登录成功</p>
+    <h1>有道云协作文件统计插件</h1>
+    <div id="before">
+        <p>请使用Chrome登录有道云笔记网页版，进入有道云协作主页，并选择您希望统计的群组。如下图所示，选中的群组为“我的第一个群”。</p>
+        <img src="snapshot.png" style="width:750px;height:auto;">
+        <p>然后点击<button id="start">开始</button>按钮进行文件统计</p>
 
-    <div id="start">
-      <button>Click Me!</button>
     </div>
 
-    <table id="result" border="1">
-      <tr>
-        <th>Name</th>
-        <th>Creator</th>
-        <th>CTime</th>
-        <th>UTime</th>
-      </tr>
-    </table>
+    <div id="after">
+        <p>统计结果如下，点击<button class="btn" data-clipboard-target="#result">
+            <img src="clippy.svg" width="13" alt="Copy to clipboard">
+        </button>按钮将表格复制，然后可以粘贴到Excel。</p>
 
+        
+
+        <table id="result" class="table">
+          <tr>
+            <th>文件名</th>
+            <th>创建者</th>
+            <th>创建时间</th>
+            <th>修改时间</th>
+          </tr>
+        </table>
+    </div>
     <script src="js/execute.js"></script>
 
 </body>

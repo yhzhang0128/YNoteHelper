@@ -1,3 +1,7 @@
+function PrefixInteger(num, n) {
+    return (Array(n).join(0) + num).slice(-n);
+}
+
 function UnixToDate(unixTime, isFull) {
     var time = new Date(unixTime + 8 * 60 * 60 * 1000);
 
@@ -7,9 +11,9 @@ function UnixToDate(unixTime, isFull) {
     ymdhis += time.getUTCDate();
     if (isFull === true)
     {
-        ymdhis += " " + time.getUTCHours() + ":";
-        ymdhis += time.getUTCMinutes() + ":";
-        ymdhis += time.getUTCSeconds();
+        ymdhis += " " + PrefixInteger(time.getUTCHours(), 2) + ":";
+        ymdhis += PrefixInteger(time.getUTCMinutes(), 2) + ":";
+        ymdhis += PrefixInteger(time.getUTCSeconds(), 2);
     }
     return ymdhis;
 }
@@ -77,12 +81,17 @@ function walkDirectory(dir){
 
 
 $("#start").click(function(){
-    //alert("HERE");
-
-    
     chrome.storage.sync.get('URL', function(items) {
         // Notify that we saved.
         raw_url = items.URL;
         walkDirectory("");
+
+        $("#before").css("display", "none");
+        $("#after").css("display", "block");
+
     });
+});
+
+$(document).ready(function(){
+    new Clipboard('.btn');
 });
